@@ -38,12 +38,11 @@ bool getPath(int** matrix, int currRow, int currColumn, vector<Point*>& path, un
     
     //Everytime robot moves up or left and it is a valid position, add the point to result vector
     if (atOrigin || getPath(matrix, currRow-1, currColumn, path, duplicateVisits) || getPath(matrix, currRow, currColumn-1, path, duplicateVisits)){
-        path.push_back(currPos);
+        path.push_back(currPos);    
+        //Keep track of already visited points
+        duplicateVisits.insert(currPos);
         return true;
     }
-    
-    //Keep track of already visited points
-    duplicateVisits.insert(currPos);
     
     return false;
 }

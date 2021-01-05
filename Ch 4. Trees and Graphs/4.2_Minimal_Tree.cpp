@@ -8,7 +8,7 @@ TreeNode* createMinBST(vector<int> arr, int start, int end) {
 	}
 	int mid = start + (end - start) / 2;
 	TreeNode* newNode = new TreeNode(arr[mid]);
-	newNode.left = createMinBST(arr, start, mid - 1);
-	newNode.right = createMinBST(arr, mid + 1, end);
+	newNode->left = createMinBST(arr, start, mid - 1);
+	newNode->right = createMinBST(arr, mid + 1, end);
 	return newNode;
 }
